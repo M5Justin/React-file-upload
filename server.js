@@ -3,6 +3,8 @@ const fileUpload = require('express-fileupload');
 
 const app = express();
 
+var port = process.env.PORT || 8080;
+
 app.use(fileUpload());
 
 //upload endpoint
@@ -25,4 +27,4 @@ app.post('/upload', (req, res) => {
 });
 
 
-app.listen(5000, () => console.log('Server Started...'));
+app.listen(port, () => console.log('Server Started...'));
