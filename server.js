@@ -5,6 +5,9 @@ const app = express();
 
 app.use(fileUpload());
 
+var distDir = __dirname + "/dist/";
+ app.use(express.static(distDir));
+
 // Upload Endpoint
 app.post('/upload', (req, res) => {
   if (req.files === null) {
